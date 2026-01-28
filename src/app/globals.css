@@ -2,26 +2,59 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: 248 250 252;
+    --foreground: 15 23 42;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --background: 15 23 42;
+      --foreground: 248 250 252;
+    }
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+@layer utilities {
+  .active\:scale-98:active {
+    transform: scale(0.98);
+  }
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Better touch targets */
+button, a {
+  touch-action: manipulation;
+}
+
+/* Prevent text selection on buttons */
+button {
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+/* Safe area padding for mobile */
+body {
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+/* Custom scrollbar for dark mode */
+@media (prefers-color-scheme: dark) {
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: rgb(30 41 59);
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: rgb(71 85 105);
+    border-radius: 4px;
   }
 }
