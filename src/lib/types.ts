@@ -18,4 +18,4 @@ export interface UserData {
   verses: Record<string, VerseProgress>;
 }
 
-export type UserName = 'Lance' | 'Will';
+export type UserName = 'Lance' | 'Will' | 'Jenn' | 'Gwen' | 'Charlotte';

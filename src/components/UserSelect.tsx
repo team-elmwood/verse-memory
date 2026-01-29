@@ -21,8 +21,8 @@ export function UserSelect() {
         </p>
       </div>
       
-      <div className="flex flex-col sm:flex-row gap-4 w-full max-w-sm">
-        {(['Lance', 'Will'] as UserName[]).map((name) => (
+      <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 w-full max-w-md">
+        {(['Lance', 'Jenn', 'Will', 'Gwen', 'Charlotte'] as UserName[]).map((name) => (
           <button
             key={name}
             onClick={() => handleSelect(name)}
